@@ -1,40 +1,48 @@
-
-
 <div class="row">
     <div class="col-md">
-        <div class="container mt-4"  *ngFor="let post of posts">
-            <div  class="row">
-                <div class="col-md">
-            
-                   
+        <div class="container mt-4" *ngFor="let post of posts">
+            <div class="row">
+                <div class="col-md-6">
                     <div class="card" style="width: 18rem;">
                         <div>
                             <h1 class="text-center">{{post.login}}</h1>
                         </div>
-            
+
                         <img src={{post.avatar_url}} class="card-img-top" alt="...">
                         <!-- <div class="card-body">
                           <p class="card-text">{{}}</p>
                         </div> -->
-        
-                        <nav >
-                            <ul>
-                              <a routerLink="/repo-component" routerLinkActive="active" class="btn btn-success mt-4 ">Repo</a>
-                              
-                            </ul>
-                          </nav>
-                          <!-- The routed views render in the <router-outlet>-->
-                        
-                      </div>        
-                      <div class="col-md">
 
-                        <router-outlet></router-outlet>
+                        <nav>
+                            <ul>
+                                <a routerLink={{post.repos_url}} class="btn btn-success mt-4 ">Repo</a>
+
+                            </ul>
+                        </nav>
+                        <!-- The routed views render in the <router-outlet>-->
+
                     </div>
+
                 </div>
-                
+                <div class="col-md-6">
+                    <!-- <router-outlet></router-outlet> -->
+
+                    <div class="card border-primary mb-3" >
+                        <div class="card-header">{{ post.login }}</div>
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                        <div class="container">
+                            <a href={{post.html_url}} class="btn btn-primary">View user</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-        
+
     </div>
-    
+
 </div>
