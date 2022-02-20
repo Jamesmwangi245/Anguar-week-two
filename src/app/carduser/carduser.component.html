@@ -29,11 +29,14 @@
 
                     <div class="card border-primary mb-3" >
                         <div class="card-header">{{ post.login }}</div>
+                    
                         <div class="card-body text-primary">
-                            <h5 class="card-title">Primary card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><span >organization</span> <p>{{post.organizations_url}}</p> </li>
+                                <li class="list-group-item"><span>followers</span> <p>{{post.followers_url}}</p> </li>
+                                <li class="list-group-item"> <span>followings</span> <p>{{post.following_url}}</p> </li>
+                              </ul>
+                        </div> 
                         <div class="container">
                             <a href={{post.html_url}} class="btn btn-primary">View user</a>
                         </div>
